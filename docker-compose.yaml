@@ -1,0 +1,13 @@
+services:
+  client:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./public:/app/public
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+    tty: true
+    environment:
+      - NODE_ENV="development"
